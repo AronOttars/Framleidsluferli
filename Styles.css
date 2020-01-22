@@ -81,7 +81,42 @@ nav ul li ul li a:hover {
 
 .column {
   float: left;
-  width: 33.33%;
+  padding: 0 1%;
+}
+
+.leftThree {
+  width: 20%;
+}
+
+.rightThree {
+  width: 40%;
+}
+
+.middleThree {
+  width: 30%;
+}
+
+.leftTwo {
+  width: 20%;
+}
+
+.rightTwo {
+  width: 75%;
+}
+
+#progress {
+ width: 100%;
+ border: 1.5px solid gray;
+ position: relative;
+}
+
+#percent {
+ position: absolute;
+ left: 50%;
+}
+
+#bar {
+ height: 21px;
 }
 
 /* Clear floats after the columns */
@@ -89,4 +124,13 @@ nav ul li ul li a:hover {
   content: "";
   display: table;
   clear: both;
+}
+
+li span {
+  position: relative;
+  left: -10px;
+}
+
+#framleidsluferlismyndir {
+  float: left;
 }
