@@ -130,7 +130,8 @@ nav ul li ul li a:hover {
 }
 
 #progress {
- width: 100%;
+ width: 70%;
+ margin-top: -1em; margin-left: 3%;
  border: 1.5px solid gray;
  position: relative;
 }
@@ -141,7 +142,7 @@ nav ul li ul li a:hover {
 }
 
 #bar {
- height: 21px;
+ height: 15px;
 }
 
 /* Clear floats after the columns */
