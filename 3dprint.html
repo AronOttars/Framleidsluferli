@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="Styles.css">
+</head>
+
+<header>
+  <nav style="text-align:left;">
+    <p>Aron Óttarsson</p>
+    <ul>
+      <small>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About me</a></li>
+        <li><a href="">Portfolio</a>
+          <ul>
+            <li><a href="framleidsluferli.html">Framleiðsluferli</a></li>
+            <li><a href="#">Örtölvu og mælitækni</a></li>
+            <li><a href="onnurverkefni.html">Önnur verkefni</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        </small>
+      </ul>
+  </nav>
+</header>
+
+  <body>
+    <h2 style="text-align: center; color:white;background-color:rgb(0,51,102)">3D printing and scanning</h2>
+    <h3>Week 1</h3>
+    <p>
+    For this assignment the goal is split into two parts, first to draw and 3D print something that could not be manufactured
+    using subtractive manufacturing methods like milling og turning. The second part of the assignment is to 3D scan something.
+    <br>
+    To start with I needed an idea for what I wanted to 3D print, I started looking through google and example from fabacadamy students
+    and found some interesting ideas:
+    <ul>
+      <li><a href="http://fabacademy.org/2019/labs/seoul/students/miriam-choi/week6.html">Octopus and joints</a> </li>
+      <li><a href="http://fabacademy.org/2019/labs/tecsup/students/carlos-ochoa/week-6.html">Gears</a> </li>
+      <li><a href="http://fabacademy.org/2019/labs/echofab/students/chukwuma-asuzu/task6.html">Pipes</a> </li>
+      <li><a href="http://fabacademy.org/2019/labs/trivandrum/students/jaisu-joseph/w06-3d-scanning-and-printing.html">Mobius strip</a> </li>
+    </ul>
+    Now I had some ideas but had not decided what to do. I was cleaning my bedroom and was trying to decide what to do with a bunch of electrical
+    cables behind my desk.
+    </p>
+
+    <img style="width:50%; margin-top: 1%; margin-bottom: 1%;" src="Myndir/3DPrinting/Wires.jpg" alt="Photo of cables" class="center">
+
+    <p>
+     I started looking online for wire fasteners or ways to hide them but then I thought what if I could use this project to clean up the wires.
+     I opened Inventor and started drawing a basic hook shape kind of like what I wanted the final hook to look like.
+     </p>
+
+     <img style="width:30%; margin-top: 1%; margin-bottom: 1%;" src="Myndir/3DPrinting/SplineWrong.JPG" alt="Photo of cables" class="center">
+
+     </p>
+     I was not completely happy with the spline so I started dragging the control points around to change the shape of the hook, I decided that to be able to
+     comfortably put wires onto the hook I would need a gap of around 8mm I also wanted to have the end of the hook at around 16mm from the base as I decided
+     to have the base thickness of the hook 8mm and then taper down to 3mm, that would give me 8mm of clearance at the side of the base.
+     </p>
+
+     <img style="width:25%; float: left; margin-left:18%;" src="Myndir/3DPrinting/SplineBetter.JPG" alt="Photo of cables" class="center">
+     <img style="width:25%;" src="Myndir/3DPrinting/SplineEvenBetter.JPG" alt="Photo of cables" class="center">
+
+     <p style="clear:both;">I wanted more control of the shape so I added extra control points by right clicking on the spline and selecting "insert vertex",
+     now I had a shape that I liked. I created two new planes at either end of the spline by using the plane command and clicking the endpoint of the spline
+     and then the spline itself, that creates a plane that is alway perpendicular to the spline. I also changed the extra lines that I was using for spacing
+     to construction lines.
+   </p>
+
+   <img style="width:40%;" src="Myndir/3DPrinting/CreateNormalPlane.JPG" alt="Photo of cables" class="center">
+
+   <p style="clear: both;">I then created a circle that had a diameter of 8mm at the base of the spline that would be used as the profile of a sweep command,
+   I also drew a circle at the end of the spline that had a diameter of 3mm.</p>
+
+   <img style="width:40%;" src="Myndir/3DPrinting/CircleSweep.JPG" alt="Photo of cables" class="center">
+
+   <p>I wanted to use the sweep command between the two circles following the path of the first sketch but after searching around google for a while I
+   could not find a method that worked, because the hook does not have to be very acurate I decided instead to manually input a taper to the sweep and
+    try to align the diameter of the end of the sweep to the 3mm circle sketch.</p>
+
+    <img style="width:45%; float: left; margin-left:3%;" src="Myndir/3DPrinting/SweepTaper.JPG" alt="Photo of cables" class="center">
+    <img style="width:45%;" src="Myndir/3DPrinting/EditSweepTaper.JPG" alt="Photo of cables" class="center">
+
+    <p style="clear:both;">Now that the hook was ready I needed to draw the base, I decided to have the base 25x40mm, that would give me enough room to
+      position holes for screws. I created a sketch plane on the bottom of the hook and drew two circles with a diameter of 25mm and constrained the centers
+    to the x-axis and constrained the distance between the centers as 15mm. I then drew two lines that were parallel to the x-axis and 15mm long, I then used
+    the tangent constrain to constrain the lines to the circles.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/BaseSketchDimNoTrim.JPG" alt="Photo of cables" class="center">
+
+    <p>I then used the trim tool to trim off any extra lines inside the base.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/BaseSketchDimTrimmed.JPG" alt="Photo of cables" class="center">
+
+    <p>After extruding the base the next step was to add the fastening holes. I created a sketch on top of the base and inserted points where I wanted the
+    holes to be.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/FasteningHoles.JPG" alt="Photo of cables" class="center">
+
+    <p>I then used the Hole tool to create the holes, I wanted to have 4 hooks in total, two under my desk and two running down the wall so I will be fastening
+    two hooks with wood screws and two with concrete nails, I decided to have countersunk holes with top radius of 3mm and the hole radius as 2mm as the hooks
+    will not need to hold heavy items. I selected the points I had put into the previous sketch and was very happy with how it looked. </p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/CounterSunkHole.JPG" alt="Photo of cables" class="center">
+
+    <p>I finally added some fillets to the base so that it would be more comfortable when installing.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/BaseFillet.JPG" alt="Photo of cables" class="center">
+
+    <p>Now that the drawing was complete I exported it as an STL file. I then imported that file into Ultimaker Cura.</p>
+
+    <img style="width:70%;" src="Myndir/3DPrinting/CuraHookSmall.JPG" alt="Photo of cables" class="center">
+
+    <p>As can be seen the drawing is to small, but after rotating the drawing so the base plate is at the bottom I noticed
+    that the proportions of the drawing were correct, but the scale was not. This was easily fixed by clicking on the model, selecting
+    the second tab on the menu to the left and changing one of the sizes to the correct size, amking sure to have uniform scaling selected.
+    This scaled the model up by 1000% so the most likely explanation is that it was a simple unit conversion misunderstanding between Inventor and Cura.
+    </p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/CuraCorrectSize.JPG" alt="Photo of cables" class="center">
+
+    <p>Now that the model was correct the next step was to slice the model. I started by using the reccomended setting but changing the layer height to 0.15mm
+    instead of 0.2mm to make the model a bit more sturdy and clean.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/CuraSliceBasic.JPG" alt="Photo of cables" class="center">
+
+    <p>This probably would have worked well but I wanted to make some changes to the settings, by clicking on the "Custom" button in the bottom right
+    corner of the settings I was able to change most settings. I started by making sure that the "Generate Support" box was ticked, as the part would
+    not print properly without supports. I then changed the "Support Overhang Angle" to 40° which is a bit low but I wanted to make sure that there
+    would not be problems while printing the part.</p>
+
+    <img style="width:60%;" src="Myndir/3DPrinting/CuraSupportSettings.JPG" alt="Photo of cables" class="center">
+
+    <p>Next I changed the infill settings, the base needs to be pretty strong to be able to hold the nails and screws and the hook also has a fairly small
+      diameter so I would need a lot of material to make sure that it is strong so I changed the infill settings to 70% infill density.</p>
+
+    <img style="width:60%;" src="Myndir/3DPrinting/CuraInnfilSettings.JPG" alt="Photo of cables" class="center">
+
+    <p>I then changed the "Wall Line Count" setting to 5, as some parts would be held in place by screws I wanted to make sure that the threads of the
+    screws would not cut through the walls of the holes.</p>
+
+    <img style="width:60%;" src="Myndir/3DPrinting/CuraWallLineCount.JPG" alt="Photo of cables" class="center">
+
+    <p>Now I was happy with the settings so I went back to the prepare section of Cura at the top center of the screen and multiplied my model 3 times so that I had 4 hooks.</p>
+
+    <img style="width:26%; float: left; margin-left:2%;" src="Myndir/3DPrinting/CuraMultiply.JPG" alt="Photo of cables" class="center">
+    <img style="width:32%; float: left; margin-left:3%;" src="Myndir/3DPrinting/CuraMultiply2.JPG" alt="Photo of cables" class="center">
+    <img style="width:32%; float: left; margin-left:3%; margin-bottom: 1%;" src="Myndir/3DPrinting/CuraMultiply3.JPG" alt="Photo of cables" class="center">
+
+    <p style="clear:both;">Now the file was ready to print, before printing all 4 hooks I decided to print 1 hook to make sure that everything was okay, that
+    way if I found I needed to change the shape of the hook, or the spacing between the end of the hook and the base or anything else
+    I would not have wasted 3 hours and some material printing 3 extra hooks that would be useless.
+    <br>
+    I saved the file as a gcode from Cura and put the file onto a USB drive, I then put the USB drive into the Ultimaker 3 printer and found the file and started printing.
+    After about an hour the first hook was ready, it came out fantastic.</p>
+
+    <img style="width:45%; float: left; margin-left:3%;" src="Myndir/3DPrinting/HookWithSupports.jpg" alt="Photo of cables" class="center">
+    <img style="width:45%;" src="Myndir/3DPrinting/HookFinal.jpg" alt="Photo of cables" class="center">
+
+    <p style="clear:both;">After looking at the hook I was not as pleased as I had hoped, the fastening holes were to small and it was a bit of an overkill
+    to use 3 holes. I decided to go back to the drawing and change the shape of the hook to make it a bit slimmer, I also lowered the height of the hook a bit.</p>
+
+    <img style="width:25%;" src="Myndir/3DPrinting/HookShapeFinal.JPG" alt="Photo of cables" class="center">
+
+    <p>Now I had a bit more space to work with for placing fastening holes, I went back to the sketch with the points for the hole placement and added a point in front of the hook.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/FasteningHolesV2.JPG" alt="Photo of cables" class="center">
+
+    <p>I then edited the hole feature and made the holes bigger and took out the holes at the side of the hook.</p>
+
+    <img style="width:70%;" src="Myndir/3DPrinting/EditHoleFeature.JPG" alt="Photo of cables" class="center">
+
+    <p>Now the second version of the drawing was ready</p>
+
+    <img style="width:30%; float: left; margin-left:10%;" src="Myndir/3DPrinting/HookRender.JPG" alt="Photo of cables" class="center">
+    <img style="width:25%;" src="Myndir/3DPrinting/HookRenderBack.JPG" alt="Photo of cables" class="center">
+
+    <p>I exported the file again as an STL file and imported into Cura, making sure to use the same settings as before. Now however the Ulimaker printer was working
+    on another job so I needed to use the Prusa I3 Mk3S printer. Cura does include support for Prusa I3 printers but Prusa does supply everythign needed to add them into
+    Cura. I followed this tutorial,
+    <a href="https://manual.prusa3d.com/Guide/How+to+import+profiles+to+Cura+4.x+(Windows+&+macOS)/1421#_ga=2.230342292.989942251.1581779368-2032288539.1579615268">Impot Prusa profiles into Cura</a>
+    , to add the profiles.
+    <br>
+    I first opened C: -> Program Files -> Ultimaker Cura 4.3 -> resources
+   </p>
+
+   <img style="width:50%;" src="Myndir/3DPrinting/CuraFiles.JPG" alt="Photo of cables" class="center">
+
+   <p>I then downloaded the .zip file on the website and unzipped it. I then went into Prusa -> Cura_OriginalPrusa_Profiles -> Cura_OriginalPrusa_Profiles -> Cura_4_0_0 -> MK3S_MK3_cura_profiles and there were all
+   the files I needed, neatly sorted into folders.</p>
+
+   <img style="width:50%;" src="Myndir/3DPrinting/PrusaDefinitions.JPG" alt="Photo of cables" class="center">
+
+   <p>The first tree folders all have a single file inside that needs to be copied into the respective folder in Cura, so the file in the
+   01_Cura_printer_definitions is copied into the definitions folder in Cura and so on. Once those three files are in place it is time to open Cura.
+   <br>
+   Now I needed to add the layerheight profiles and materials into Cura, so I selected Settings -> Profiles -> Manage Profiles.
+  </p>
+
+  <img style="width:50%;" src="Myndir/3DPrinting/CuraManageProfiles.JPG" alt="Photo of cables" class="center">
+
+  <p>I then selected the import button and imported all of the profiles in the 04_Cura_layerheight_profiles folder.</p>
+
+  <img style="width:50%;" src="Myndir/3DPrinting/CuraImportProfiles.JPG" alt="Photo of cables" class="center">
+
+  <p>I then went into the materials tab and did the same but with the files in the 05_Cura_Prusa_materials folder.
+    <br>
+    Now I could add the printer by selecting the printer tab, and clicking add printer and selecting the printer under "Prusa research".
+  </p>
+
+  <img style="width:40%; float: left; margin-left:10%;" src="Myndir/3DPrinting/CuraAddPrinter.JPG" alt="Photo of cables" class="center">
+  <img style="width:25%;" src="Myndir/3DPrinting/CuraAddPrinter2.JPG" alt="Photo of cables" class="center">
+
+  <p style="clear:both;">With the printer selected and all of the setting like the first time I put the file onto the SD card and started printing. The hook came out like
+  it had been burnt on a couple of places and missed one layer, but after checking Cura again all the layers were there, so it seems that the temperature
+  that I was using was too high.
+  </p>
+
+  <img style="width:40%; float: left; margin-left:7%;" src="Myndir/3DPrinting/BurnedSide.jpg" alt="Photo of cables" class="center">
+  <img style="width:40%;" src="Myndir/3DPrinting/BurnedFront.jpg" alt="Photo of cables" class="center">
+
+  <p style="clear:both;">
+  The temperature was set to 255°C and after a couple of google searches I found this page,
+  <a href="https://all3dp.com/2/abs-print-bed-temperature-all-you-need-to-know/">The perfect ABS print and bed temperature</a>,
+  according to that page ABS plastic like the one I used for the second hook melts at around 210-250°C and the author of the page reccomends using 235°C for the nozzle temperature.
+  The bed temperature was set to 100°C but as stated on the page the glass transition temperature for ABS plastic is around 105°C and reccomends using a bed temperature of 110°C.
+  <br>
+  After changing those settings in Cura I tried printing again.
+  </p>
+
+  <img style="width:25%;" src="Myndir/3DPrinting/CuraMaterialPrintingProperties.JPG" alt="Photo of cables" class="center">
+
+
+
+    <h3 style="clear:both;">Search engine key words</h3>
+    <p>diy powerstrip - 3d printing ideas - cool 3d print - 3d printing - Sweep between two circles inventor - Inventor sweep tutorial -
+      Changing radius sweep inventor - ABS filament printing temperature - ABS temperature - ABS filament 3D printing
+     </p>
+  </body>
+</html>
