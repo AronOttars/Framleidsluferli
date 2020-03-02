@@ -26,7 +26,7 @@
 
   <body>
     <h2 style="text-align: center; color:white;background-color:rgb(0,51,102)">3D printing and scanning</h2>
-    <h3>Week 1</h3>
+    <h3>3D Printing</h3>
     <p>
     For this assignment the goal is split into two parts, first to draw and 3D print something that could not be manufactured
     using subtractive manufacturing methods like milling og turning. The second part of the assignment is to 3D scan something.
@@ -230,12 +230,143 @@
 
   <img style="width:25%;" src="Myndir/3DPrinting/CuraMaterialPrintingProperties.JPG" alt="Photo of cables" class="center">
 
+  <p>This time the ABS plastic did not burn and came out very nice! After talking with Arnar about the burned part he told me that the ABS that I used was almost 3 years old
+  and had lost most of its moisture so that probably had some effect on the outcome as well.</p>
 
+  <img style="width:50%;" src="Myndir/3DPrinting/PrusaBetter.jpg" alt="Photo of cables" class="center">
+
+  <p>Now the next step was to install the hooks under the table, to make sure that the screws I had did not go through the desk I checked the length of them in relation to the
+  desk and hook.</p>
+
+  <img style="width:50%;" src="Myndir/3DPrinting/TestingScrews.jpg" alt="Photo of cables" class="center">
+
+  <p>After installing the hooks and mounting the cables onto them the 3d printing part of the project was finished and I was very happy with the results!</p>
+
+  <img style="width:60%; margin-bottom:1%;" src="Myndir/3DPrinting/Finished3.jpg" alt="Photo of cables" class="center">
+  <img style="width:60%; margin-bottom:1%;" src="Myndir/3DPrinting/Finished5.jpg" alt="Photo of cables" class="center">
+  <img style="width:60%; margin-bottom:1%;" src="Myndir/3DPrinting/Finished1.jpg" alt="Photo of cables" class="center">
+
+  <p>Unfortunately while I was installing the hooks the one that was burned snapped, the burned plastic must have lost a lot of its strength and there was also some sort of
+  error while printing where the hook broke apart.</p>
+
+  <img style="width:45%; float: left; margin-left:4%;" src="Myndir/3DPrinting/BurnedSide.jpg" alt="Photo of cables" class="center">
+  <img style="width:45%;" src="Myndir/3DPrinting/Broken.jpg" alt="Photo of cables" class="center">
+
+
+
+  <h3 style="clear:both;">3D Scanning</h3>
+  <p>
+    I have never worked with making a 3D model from a picture set, after hearing from Ívar Dór about his experience using
+    <a href="https://www.regard3d.org/">Regard 3D</a> I decided to use that program
+    but I still had no idea what I wanted to 3D scan. While I was helping my classmates at Fablab with Máni we decided to try 3D scanning him, we wanted to see how
+    well you could 3D scan something that was not static with just a basic camera phone and a colorful background. Máni had decided to use Meshroom to do his 3D
+    scanning project, so we also had the idea to use the exact same pictures with the two different programs and compare the results. Here are some examples of the
+    pictures that were used to generate the 3D model, in total there aree 56 pictures but after looking online it would have been better to take around 100 pictures.
+  </p>
+
+  <img style="width:50%; margin-bottom: 1%;" src="Myndir/3DPrinting/PictureSetExample.JPG" alt="Photo of cables" class="center">
+  <img style="width:40%;" src="Myndir/3DPrinting/TakingPictures.JPG" alt="Photo of cables" class="center">
+
+  <p>Once I had taken the pictures I had no idea what to do with them, luckily Ívar also told me about a good tutorial from the creators of Regard 3D,
+  <a href="https://www.regard3d.org/index.php/documentation/tutorial">Regard 3D tutorial</a>, which goes through the exact steps needed to make
+  a 3D model from a picture set. The first step is to import the pictures, this is done by clicking the "Add Picture Set..." button then "Add Files..." and then
+  selecting all the pictures that you want to use for the picture set.
+  </p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/PictureSet.JPG" alt="Photo of cables" class="center">
+
+    <p>The next step is to compute matches from the picture set. This is done by making sure that the picture set is selected and clicking on "Compute matches...",
+    this looks at all the pictures and finds matches between them that the program can use to compute a mesh from. The tutorial reccomended moving both sliders fully to the right
+    for smaller picture sets, so I used those settings.</p>
+
+    <img style="width:15%; margin-bottom: 1%; float:left; margin-left:8%;" src="Myndir/3DPrinting/ComputeMeshPrepare.JPG" alt="Photo of cables" class="center">
+    <img style="width:64%;" src="Myndir/3DPrinting/ComputeMesh.JPG" alt="Photo of cables" class="center">
+
+    <p>The next step is to triangulate the matches, this is done much the same way that the matches were computed, first make sure that the matches are selected and then
+    click the "Triangulation..." button, the tutorial was a bit outdated for this step but the default setting produced a good point cloud.</p>
+
+    <img style="width:40%; margin-bottom: 1%;" src="Myndir/3DPrinting/Triangulation.JPG" alt="Photo of cables" class="center">
+    <img style="width:40%;" src="Myndir/3DPrinting/FirstModel.JPG" alt="Photo of cables" class="center">
+
+    <p>To see more points from the point cloud it needs to be densified, this is done by making sure that the triangulation is selected and clicking the "Create dense pointcloud..."
+    these are the settings reccomended for smaller picture sets by the tutorial.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/DensificationV1.JPG" alt="Photo of cables" class="center">
+
+    <p>This produced okay results as can be seen in the following picture.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/DensificationV1Finished.JPG" alt="Photo of cables" class="center">
+
+    <p>I however tried lowing the level down to 1 and this lead to an even better densification.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/DensificationV2.JPG" alt="Photo of cables" class="center">
+
+    <p>This produced even better results.</p>
+
+    <img style="width:40%;" src="Myndir/3DPrinting/DensificationV2Finished.JPG" alt="Photo of cables" class="center">
+
+    <p>Now the last step is to connect the points in the point cloud together and create surfaces, this is done exactly like the other steps, I used the reccomended settings and the surface was okay.</p>
+
+    <img style="width:28.25%; margin-bottom: 1%; float:left; margin-left:5%;" src="Myndir/3DPrinting/Surface.JPG" alt="Photo of cables" class="center">
+    <img style="width:61.75%;" src="Myndir/3DPrinting/SurfaceV1Finished.JPG" alt="Photo of cables" class="center">
+
+    <p>After increasing the depth of the surface generation I got even better results.</p>
+
+    <img style="width:28.25%; margin-bottom: 1%; float:left; margin-left:5%;" src="Myndir/3DPrinting/SurfaceV2.JPG" alt="Photo of cables" class="center">
+    <img style="width:61.75%;" src="Myndir/3DPrinting/SurfaceV2Finished.JPG" alt="Photo of cables" class="center">
+
+    <p>There was still however a lot of blobs in the air and a lot of the background showing, but Ívar pointed it out to me that the threshold setting could reduce that, he had used a threshold of 8.5
+    so I started off with that aswell. This produced very nice results.</p>
+
+    <img style="width:28.25%; margin-bottom: 1%; float:left; margin-left:5%;" src="Myndir/3DPrinting/SurfaceV3.JPG" alt="Photo of cables" class="center">
+    <img style="width:61.75%;" src="Myndir/3DPrinting/SurfaceV3FinishedLighting.JPG" alt="Photo of cables" class="center">
+
+  <h3 style="clear:both;">Workload</h3>
+  <table>
+    <tr>
+      <th>Time</th>
+      <th>Work</th>
+    </tr>
+    <tr>
+      <td>2 Hours</td>
+      <td>Drawing in Inventor and preparing the file for 3D printing.</td>
+    </tr>
+    <tr>
+      <td>2 Hours</td>
+      <td>Learning to use the Prusa 3D Printers and importing Prusa i3 Mk3 into Cura</td>
+    </tr>
+    <tr>
+      <td>1 Hour</td>
+      <td>Starting the 3D printing process</td>
+    </tr>
+    <tr>
+      <td>1 Hour</td>
+      <td>Fastening the hooks under the desk and fixing the cables</td>
+    </tr>
+    <tr>
+      <td>1 Hour</td>
+      <td>Finding a model to scan and taking pictures of the model</td>
+    </tr>
+    <tr>
+      <td>4 Hours</td>
+      <td>Creating a 3D model from pictures</td>
+    </tr>
+    <tr>
+      <td>6 Hours</td>
+      <td>Updating the website</td>
+    </tr>
+    <tr>
+      <th>17 Hours</th>
+      <th>Total time</th>
+    </tr>
+  </table>
+
+  <h3 style="clear:both;">Design files</h3>
 
     <h3 style="clear:both;">Search engine key words</h3>
     <p>diy powerstrip - 3d printing ideas - cool 3d print - 3d printing - Sweep between two circles inventor - Inventor sweep tutorial -
       Changing radius sweep inventor - ABS filament printing temperature - ABS temperature - ABS filament 3D printing - Regard 3D - Regard 3D tutorial - Regard 3D bad lighting -
-      Working with mesh inventor - 
+      Working with mesh inventor -
      </p>
   </body>
 </html>
