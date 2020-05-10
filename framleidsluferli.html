@@ -42,7 +42,7 @@
   </a>
 
   <a href="cnc.html" style="margin-left: 6%;">
-    <img src="Myndir/3DPrinting/HookRender.JPG" width="15%" alt="Image Desc" border-radius: 5%; style="margin-left: 1%; margin-top: 1%;">
+    <img src="Myndir/CNC/IsoRender.JPG" width="15%" alt="Image Desc" border-radius: 5%; style="margin-left: 1%; margin-top: 1%;">
   </a>
 
   <p style="clear:both; float:left; margin-left: 13.5%; margin-bottom: 1%;">1. About me</p>
@@ -222,10 +222,89 @@
   <img style="width:65%;" src="Myndir/Final/2DContourPasses2.JPG" alt="Photo of wine stand" class="center">
 
   <p>
-    Now the contour strategy was ready.
+    Now the contour strategy was ready. The next step is to cut out the holes for the wine bottles. This is done with the 2D pocket strategy. The steps for
+    this strategy is the same as for the 2D contour so I will not show all the steps. Once the pocket strategy is ready everything has been milled out except
+    for the fillets on the holes. This can be done in a number of ways but I decided to use the 3D flow strategy. This is done much the same way but the fillets
+    are selected as the geometry to be machined, and after some trial and error I found that 100 passes per hole gave good enough results.
   </p>
 
+  <img style="width:65%;" src="Myndir/Final/Flow1.JPG" alt="Photo of wine stand" class="center">
+  <img style="width:65%;" src="Myndir/Final/Flow2.JPG" alt="Photo of wine stand" class="center">
 
+  <p>
+    Now all the strategies were finished for the 20mm thick parts but having the 2D contour strategy as the first operation is not wise as then the part would be cut out and
+    then the machine would try to cut out the holes which would not go well, so I changed the order of operations for the milling machine.
+  </p>
+
+  <img style="width:65%;" src="Myndir/Final/CAMStrategyReorder.JPG" alt="Photo of wine stand" class="center">
+
+  <p>
+    Now the machine will first cut out all the holes, then cut out the fillets on them and then cut out the parts. The same was done for the back plates, but as they are a little bit simpler they will
+    be machined a little bit differently. The part features two countersunk holes to fasten the back plates to the walls. Fablab has a 90° tool that can be used but the simplest way to manufacture
+    this part is to drill out the holes with a cnc drill strategy, cut out the part with 2D contour and then use a hand drill with a countersink tool to create the countersink. That eleminates the need
+    to change tools on the cnc machine while manufacturing.
+  </p>
+
+  <img style="width:65%;" src="Myndir/Final/Drill1.JPG" alt="Photo of wine stand" class="center">
+
+  <p>
+    The 2D contour strategy is set up exactly like before. As everything shut down due to the coronavirus we could unfortunately not manufacture anything so insted we simulated the manufacture process.
+  </p>
+
+  <video style="width: 80%;" controls class="center">
+    <source src="Myndir/Final/Milling20mmTrimmed.mp4" type="video/mp4">
+  </video>
+
+  <video style="width: 80%;" controls class="center">
+    <source src="Myndir/Final/BackPlatesCut.mp4" type="video/mp4">
+  </video>
+
+  <h3 style="clear:both;">Workload</h3>
+  <table>
+    <tr>
+      <th>Time</th>
+      <th>Work</th>
+    </tr>
+    <tr>
+      <td>3 Hours</td>
+      <td>Finding insperation for the project</td>
+    </tr>
+    <tr>
+      <td>2 Hours</td>
+      <td>Deciding how we want to make and manufacture the design</td>
+    </tr>
+    <tr>
+      <td>1 Hour</td>
+      <td>Setting up roles in the team</td>
+    </tr>
+    <tr>
+      <td>3 Hours</td>
+      <td>Drawing in Inventor.</td>
+    </tr>
+    <tr>
+      <td>1 Hour</td>
+      <td>Fixing drawings</td>
+    </tr>
+    <tr>
+      <td>2 Hours</td>
+      <td>Creating the CNC files</td>
+    </tr>
+    <tr>
+      <td>1 Hour</td>
+      <td>Creating the simulations</td>
+    </tr>
+    <tr>
+      <td>5 Hours</td>
+      <td>Updating the website</td>
+    </tr>
+    <tr>
+      <th>18 Hours</th>
+      <th>Total time</th>
+    </tr>
+  </table>
+
+  <h3 style="clear:both;">Design files</h3>
+  All design files for this project can be found <a href="https://github.com/AronOttars/Framleidsluferli/tree/master/Lokaverkefni">here</a>.
 
 </body>
 </html>
